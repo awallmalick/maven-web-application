@@ -10,7 +10,8 @@
 </head>
 <body>
 <h1 align="center">Landmark Technology  --> A Metropolitan University Company</h1>
-<h1 align="center"> Welcome to Landmark Technology.......We have a demo on DevOps E Degree with Linux and AWS  on Saturday August 5, 2020 at 4pm EST for our new batch. 
+<h1 align="center"> Welcome to Landmark Technology.......We have a demo on DevOps E Degree with Linux and AWS  on Saturday April 15, 2023 at 4pm EST for our new batch of class 32. 
+	This new batch of Class 32 will start from April 15th and run till August 21st 2023.
 	Landmark Technology is a an ideal online training  platform for DevOps and Cloud Infrastructures. 
 	Our anointed and extensive teaching approach takes our students with or without any IT Background to become Subject Matter Expect in IT, and DevOps automation.
 	Over 80% of our students are hired within 6 months of joining Landmark Technology.
