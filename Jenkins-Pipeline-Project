@@ -1,0 +1,36 @@
+node{
+    def mavenHome = tool name: 'maven3.9.1'
+    stage('1.CodeClone'){
+        git credentialsId: 'GitHubCredentials', url: 'https://github.com/awallmalick/maven-web-application'
+        //bat "git clone https://github.com/awallmalick/maven-web-application"
+    }
+   stage('2MavenBuild'){
+       sh "${mavenHome}/bin/mvn package"
+   } 
+   stage('3CodeQuality'){
+       sh "${mavenHome}/bin/mvn sonar:sonar"
+   }
+   stage('4.UploadArtifacts'){
+       sh "${mavenHome}/bin/mvn deploy"
+   }
+   stage('5.Deploy2UAT'){
+       deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://13.50.110.2:8177/')], contextPath: null, war: 'target/*war'
+   }
+   stage('6.ManualApproval'){
+       sh "echo 'Application is ready for review' "
+       timeout(time:5, unit:'HOURS'){
+        input message: 'Application ready for deployment, Please review and approve'
+       }
+       }
+    stage('7Deploy2Prod'){
+       deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://13.50.110.2:8177/')], contextPath: null, war: 'target/*war'
+   }  
+   stage('8mailNotify'){
+       emailext body: '''Hello Team
+
+Build is done.
+
+AwallMalickTech''', recipientProviders: [developers(), contributor(), upstreamDevelopers()], subject: 'Build Status', to: 'malickawall@gmail.com'
+   }
+    
+}
