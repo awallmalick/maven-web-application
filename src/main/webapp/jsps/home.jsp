@@ -18,6 +18,7 @@
 	Congratulations!! Welcome to Landmark Technology!! Welcome to your ENVIABLE IT CAREER.
 	We offer interview preparations and job assitance.
 	God keeps doing wonders to our students in Landmark Technologies
+	Our main goal is to be great
 	The King is in our midst. His name is JESUS. What a wonderful it is. HE IS OUR SUCCESS ACCESS KEY.
 	Thanks for being an ambassador of Landmark Technology. President</h1>
 <hr>
